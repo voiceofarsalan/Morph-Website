@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import BookDemoButton from "./BookDemoButton";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -78,15 +79,14 @@ export default function Navbar() {
           >
             Contact
           </a>
-          <motion.a
-            href="#footer"
+          <BookDemoButton
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-500 px-5 py-2.5 text-sm font-medium text-white glow-purple overflow-hidden"
           >
             <span className="relative z-10">Book a Demo</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-400/20 to-cyan-500/0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-700" />
-          </motion.a>
+            <span className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-400/20 to-cyan-500/0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-700 pointer-events-none" />
+          </BookDemoButton>
         </div>
 
         <button
@@ -121,13 +121,12 @@ export default function Navbar() {
                 </li>
               ))}
               <li className="pt-2 border-t border-white/10 mt-2">
-                <a
-                  href="#footer"
-                  onClick={() => setMobileOpen(false)}
+                <BookDemoButton
+                  onBook={() => setMobileOpen(false)}
                   className="flex w-full justify-center rounded-full bg-gradient-to-r from-purple-600 to-purple-500 py-3 text-sm font-medium text-white"
                 >
                   Book a Demo
-                </a>
+                </BookDemoButton>
               </li>
             </ul>
           </motion.div>

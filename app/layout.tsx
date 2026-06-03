@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import CursorGlow from "@/components/CursorGlow";
+import { CALENDLY_STYLES } from "@/lib/calendly";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -57,6 +58,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <link href={CALENDLY_STYLES} rel="stylesheet" />
+      </head>
       <body className="font-sans min-h-screen overflow-x-hidden">
         <CursorGlow />
         <div className="noise-overlay fixed inset-0 z-[100] mix-blend-overlay" aria-hidden />
