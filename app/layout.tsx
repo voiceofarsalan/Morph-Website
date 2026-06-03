@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import CursorGlow from "@/components/CursorGlow";
 import { CALENDLY_STYLES } from "@/lib/calendly";
@@ -67,6 +68,7 @@ export default function RootLayout({
         <div className="noise-overlay fixed inset-0 z-[100] mix-blend-overlay" aria-hidden />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
