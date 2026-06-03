@@ -7,7 +7,7 @@ import { fadeInUp, staggerContainer } from "@/lib/motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-x-hidden">
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[300px] bg-cyan-500/8 rounded-full blur-[100px] pointer-events-none" />
 
@@ -93,7 +93,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mt-12 max-w-2xl mx-auto"
+            className="relative mt-12 max-w-2xl mx-auto overflow-visible px-1 sm:px-0"
           >
             <MorphVisual />
           </motion.div>
