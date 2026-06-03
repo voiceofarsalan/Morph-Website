@@ -41,12 +41,12 @@ const clients = [
 ];
 
 const desktopPositions = [
-  { top: "8%", left: "60%" },
-  { top: "18%", left: "8%" },
-  { top: "68%", left: "6%" },
-  { top: "78%", left: "56%" },
-  { top: "22%", left: "74%" },
-  { top: "58%", left: "78%" },
+  { top: "12%", left: "62%" },
+  { top: "20%", left: "14%" },
+  { top: "66%", left: "14%" },
+  { top: "76%", left: "54%" },
+  { top: "24%", left: "72%" },
+  { top: "60%", left: "74%" },
 ];
 
 /** Tighter inset so cards stay inside the viewport when centered on anchor */
@@ -99,8 +99,8 @@ export default function MorphVisual() {
   const position = outerPositions[activePosition];
 
   return (
-    <div className="relative w-full max-w-[min(520px,calc(100vw-2.5rem))] mx-auto overflow-visible">
-      <div className="relative w-full aspect-square overflow-visible">
+    <div className="relative w-full max-w-[min(520px,calc(100vw-2.5rem))] mx-auto pt-6 pb-10">
+      <div className="relative w-full aspect-square">
         <div className="absolute inset-0 grid-pattern rounded-full opacity-60" />
 
         <motion.div
@@ -214,7 +214,7 @@ export default function MorphVisual() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20">
+        <div className="absolute bottom-0 left-1/2 z-20 -translate-x-1/2 translate-y-1/2">
           <div className="rounded-full border border-white/10 bg-black/45 backdrop-blur-md px-3 sm:px-4 py-1.5 shadow-lg shadow-purple-500/10">
             <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-cyan-100/70 whitespace-nowrap font-medium">
               Trusted by innovative teams
