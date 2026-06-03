@@ -7,7 +7,7 @@ import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/motion";
 const team = [
   {
     name: "Arsalan Ahmed",
-    role: "Co-Founder",
+    role: "Founder",
     src: "/team/arsalan.jpg",
     ring: "from-purple-500 via-cyan-400 to-purple-600",
     glow: "group-hover:shadow-purple-500/25",
