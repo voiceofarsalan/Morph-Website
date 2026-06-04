@@ -6,24 +6,20 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const logo = path.join(root, "public", "morph-logo.png");
 
+/** Square transparent canvas — logo only, no background fill */
 async function makeSquareIcon(size, output) {
-  const padding = Math.round(size * 0.18);
+  const padding = Math.round(size * 0.12);
   const logoSize = size - padding * 2;
 
-  const resized = await sharp(logo)
+  await sharp(logo)
     .resize(logoSize, logoSize, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
-    .png()
-    .toBuffer();
-
-  await sharp({
-    create: {
-      width: size,
-      height: size,
-      channels: 4,
-      background: { r: 10, g: 10, b: 10, alpha: 255 },
-    },
-  })
-    .composite([{ input: resized, gravity: "center" }])
+    .extend({
+      top: padding,
+      bottom: padding,
+      left: padding,
+      right: padding,
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    })
     .png()
     .toFile(output);
 
