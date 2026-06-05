@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import CursorGlow from "@/components/CursorGlow";
 import JsonLd from "@/components/JsonLd";
+import FaviconLinks from "@/components/FaviconLinks";
 import { CALENDLY_STYLES } from "@/lib/calendly";
 
 const inter = Inter({
@@ -20,9 +21,23 @@ export const metadata: Metadata = {
   description:
     "Morph AI — Shape Shifting Intelligence. Enterprise Voice AI, agentic AI systems, generative AI, and full-stack MLOps solutions for adaptive business automation.",
   icons: {
-    icon: "/morph-logo.png",
-    shortcut: "/morph-logo.png",
-    apple: "/morph-logo.png",
+    icon: [
+      { url: "/favicon-dark.png", sizes: "48x48", type: "image/png" },
+      {
+        url: "/favicon-tab.png",
+        sizes: "48x48",
+        type: "image/png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/favicon-dark.png",
+        sizes: "48x48",
+        type: "image/png",
+        media: "(prefers-color-scheme: light)",
+      },
+    ],
+    shortcut: "/favicon-dark.png",
+    apple: "/favicon-dark-192.png",
   },
   keywords: [
     "Morph AI",
@@ -63,6 +78,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <FaviconLinks />
         <link href={CALENDLY_STYLES} rel="stylesheet" />
         <JsonLd />
       </head>

@@ -9,7 +9,7 @@ const structuredData = {
       name: "Morph AI",
       alternateName: ["We Morph AI", "MorphAI", "wemorphai"],
       url: siteUrl,
-      logo: `${siteUrl}/morph-logo.png`,
+      logo: `${siteUrl}/favicon-dark-192.png`,
       email: "morphaiofficial@gmail.com",
       description:
         "Morph AI — Shape Shifting Intelligence. Enterprise Voice AI, agentic AI, and adaptive AI systems.",
